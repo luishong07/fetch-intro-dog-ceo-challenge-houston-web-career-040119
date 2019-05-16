@@ -40,6 +40,33 @@ renderBreed(Object.keys(data.message))
 
 function renderBreed(breed){
 let ul = document.getElementById("dog-breeds")
+let dd = document.getElementById("breed-dropdown")
+dd.addEventListener("change",(e) =>{
+  selection = e.target.value
+  //conditional formatting based on selection
+  // code here
+
+  for (let i of ul.children){
+    console.log(i.innerText.charAt(0))
+
+    if (selection === i.innerText.charAt(0))
+    {
+        console.log("BING BONG")
+        i.style.display = "block"
+    }//if
+    else {
+      i.style.display = "none"
+    }
+
+
+
+
+  }//for loop
+
+
+
+  //========================================
+}) //eventlistener
 breed.forEach(function(element){
   let li = document.createElement("li")
   li.innerText = element
